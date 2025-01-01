@@ -3,7 +3,7 @@ const homeContent = {
     discription:[
         "Enter your KCET rank to predict the colleges where you can secure admission.",
         "Access detailed information on KCET college cut-offs, fees, admissions, and placement reviews.",
-        "Discover colleges you might get into based on your category and home state rank/score."
+        "Discover colleges you might get into based on your category and  rank "
     ]
 };
 const contriContent = {

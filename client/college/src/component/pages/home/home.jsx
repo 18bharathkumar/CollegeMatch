@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import { ClustorOptions, places, category } from "../../data/data";
-import HeaderCont from "../header/headercontent";
-import { homeContent } from "../header/content";
+import { ClustorOptions, places, category } from "../../../data/data";
+import HeaderCont from "../../header/headercontent";
+import { homeContent } from "../../header/content";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { collegelist, formDataAtom } from "../../atom/store";
+import { collegelist, formDataAtom } from "../../../atom/store";
 
 const MAX_PREFERENCES = 5;
 
@@ -73,11 +73,12 @@ const Home = () => {
   return (
     <>
       <HeaderCont content={homeContent} />
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-5xl">
-          {/* Form Section */}
-          <div className="lg:col-span-2 bg-white p-8 rounded-lg shadow-md space-y-6">
-            <h2 className="text-2xl font-bold text-center text-gray-800">
+      <div className="flex flex-col lg:flex-row min-h-screen bg-gray-100">
+       
+        {/* Main Content */}
+        <div className="flex-1 flex justify-center items-center px-6 py-8 lg:py-12">
+          <div className="w-full max-w-3xl p-8 bg-white rounded-lg shadow-lg">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
               KCET College Predictor 2024
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -101,7 +102,9 @@ const Home = () => {
 
               {/* Category Selection */}
               <div>
-                <label className="block text-md font-medium text-gray-600 mb-2">Select Category</label>
+                <label className="block text-md font-medium text-gray-600 mb-2">
+                  Select Category
+                </label>
                 <Select
                   id="category"
                   options={category}
@@ -135,7 +138,7 @@ const Home = () => {
                     onClick={() =>
                       addPreference("clusterPreferences", clusterPreferenceCount, setClusterPreferenceCount)
                     }
-                    className="text-blue-500 text-sm"
+                    className="text-blue-500 text-sm mt-2"
                   >
                     + Add Another Cluster Preference
                   </button>
@@ -164,7 +167,7 @@ const Home = () => {
                     onClick={() =>
                       addPreference("placePreferences", placePreferenceCount, setPlacePreferenceCount)
                     }
-                    className="text-blue-500 text-sm"
+                    className="text-blue-500 text-sm mt-2"
                   >
                     + Add Another Place Preference
                   </button>
@@ -179,17 +182,6 @@ const Home = () => {
                 Predict College
               </button>
             </form>
-          </div>
-
-          {/* Right Column */}
-          <div className="p-8 rounded-lg lg:flex lg:items-center lg:justify-center">
-            <button
-              type="button"
-              onClick={() => navigate("/clustor")}
-              className="w-full py-3 px-6 bg-blue-500 text-white font-medium text-lg rounded-md hover:bg-blue-600 transition duration-300"
-            >
-              Know About Clustor
-            </button>
           </div>
         </div>
       </div>
