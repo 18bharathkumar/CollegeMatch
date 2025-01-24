@@ -22,7 +22,7 @@ app.post('/fetchData', async (req, res) => {
 
   try {
     // Call the fetchDataFromExcel function to fetch the filtered data
-    const filePath = '../cet_colg_data.xlsx'; // Set the path to your Excel file
+    const filePath = '../data/cet_colg_data.xlsx'; // Set the path to your Excel file
     const filteredData = await fetchDataFromExcel(filePath, rank, clusters, places, category);
 
     // Send the filtered data as a response

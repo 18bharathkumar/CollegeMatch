@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import { ClustorOptions, places, category } from "../../../data/data";
-import HeaderCont from "../../header/headercontent";
-import { homeContent } from "../../header/content";
+import { ClustorOptions, places, category } from "../../data/data";
+import HeaderCont from "../../component/header/headercontent";
+import { homeContent } from "../../component/header/content";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { collegelist, formDataAtom } from "../../../atom/store";
+import { collegelist, formDataAtom } from "../../atom/store";
 
 const MAX_PREFERENCES = 5;
 

@@ -2,16 +2,17 @@ import React, { useState, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './component/header/navbar';
 import Footer from './component/footer/footer';
-import Sidebar from './component/pages/home/sidebar';
+import Sidebar from './component/sidebar/sidebar';
 import { RecoilRoot } from 'recoil';
 import { FiMessageCircle } from "react-icons/fi"; // Import chatbot icon
+import PageNotFound from './component/notfound';
 
 const CollegesTable = React.lazy(() => import('./component/display'));
-const Admin = React.lazy(() => import('./component/pages/Admin'));
-const About = React.lazy(() => import('./component/pages/About'));
+const Admin = React.lazy(() => import('./pages/Admin'));
+const About = React.lazy(() => import('./pages/About'));
 const ClusterComponent = React.lazy(() => import('./clustor/clustor'));
-const Contributor = React.lazy(() => import('./component/pages/contributor/contributor'));
-const Home = React.lazy(() => import('./component/pages/home/home'));
+const Home = React.lazy(() => import('./pages/home/home'));
+
 
 function App() {
   // Function to navigate to the chatbot page
@@ -34,8 +35,8 @@ function App() {
                   <Route path="/clustor" element={<ClusterComponent />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/admin" element={<Admin />} />
-                  <Route path="/contributor/*" element={<Contributor />} />
                   <Route path="/collegedisplay" element={<CollegesTable />} />
+                  <Route path="*" element={<PageNotFound />} />
                 </Routes>
               </div>
             </div>

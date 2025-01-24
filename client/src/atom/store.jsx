@@ -14,3 +14,8 @@ export const formDataAtom = atom({
     category: null,
   },
 });
+
+export const sidebar = atom({
+  key:"sidebar",
+  default:false
+});

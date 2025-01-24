@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { formDataAtom } from "../atom/store";
-import ClusterCard from "./clustorcomponent";
+import ClusterCard from "../clustor/clustorcomponent";
 import CollegeList from "./collegefilter";
-import PlaceFilter from "./placefilter";
+import PlaceFilter from "../filter/placefilter";
 
 const Filter = () => {
   const formData = useRecoilValue(formDataAtom);
